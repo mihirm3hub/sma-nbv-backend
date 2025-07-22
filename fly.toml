@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for nbv-sma on 2025-07-22T19:47:29+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'nbv-sma'
+primary_region = 'lhr'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  protocol = "tcp"
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
