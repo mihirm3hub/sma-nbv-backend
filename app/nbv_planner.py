@@ -4,7 +4,8 @@ import open3d as o3d
 import os
 
 # --- On server startup: load & preprocess mesh ---
-MESH_PATH = "sodaCan.glb"  # Place this file in your nbv_backend folder
+MESH_PATH = os.path.join(os.path.dirname(__file__), "sodaCan.glb")
+  # Place this file in your nbv_backend folder
 
 if not os.path.exists(MESH_PATH):
     raise FileNotFoundError(f"{MESH_PATH} not found. Place sodaCan.glb in your backend folder.")
